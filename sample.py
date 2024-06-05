@@ -22,3 +22,38 @@ test_y = linear_reg.predict(X_test)
 # print(X_test)
 # print(test_y)
 print(r2_score(X_test,test_y))
+
+
+# Example usage:
+# Generate some random data
+np.random.seed(0)
+# Generate synthetic data for the first feature
+feature1 = 2 * np.random.rand(200, 1)
+
+# Generate synthetic data for the second feature
+feature2 = 2 * np.random.rand(200, 1)
+
+# Concatenate the features vertically to create X with two features
+X = np.concatenate((feature1, feature2), axis=1)  
+
+
+y = 4 * np.random.rand(200, 1)
+
+# Print the shape of y
+print("Shape of feature1:", feature1.shape)
+print("Shape of feature2:", feature2.shape)
+print("Shape of X:", X.shape)
+print("Shape of y:", y.shape)
+
+# Instantiate and fit the model
+model = LinearRegression()
+score = model.fit(X[:150], y[:150])
+print(score)
+
+# Make predictions
+y_pred = model.predict(X[150:])
+
+print("Predictions:", y_pred)
+print("real:", y[150:])
+print(r2_score(y_pred,y[150:]))
+
