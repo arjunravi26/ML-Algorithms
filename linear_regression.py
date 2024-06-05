@@ -14,7 +14,9 @@ class LinearRegression:
         self.n_samples, n_features = X.shape
 
       # Initialize weights and bias
-        self.weights = np.zeros((n_features, 1))
+        self.weights = np.zeros((n_features,1))
+        print(self.weights.shape)
+        print(self.X.shape)
 
         self.bias = 0        
         if not self.X.shape[0] == self.y.shape[0]:
