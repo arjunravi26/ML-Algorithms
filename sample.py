@@ -22,5 +22,3 @@ test_y = linear_reg.predict(X_test)
 # print(X_test)
 # print(test_y)
 print(r2_score(X_test,test_y))
-
-
